@@ -5,6 +5,8 @@
 
 import { prisma } from "@/src/lib/prisma"
 
+export const dynamic = 'force-dynamic' //Los endpoints no se quedan en memoria cache
+
 export async function GET() {
     const orders = await prisma.order.findMany({
         where: {
